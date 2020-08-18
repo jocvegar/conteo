@@ -54,15 +54,14 @@
 // Then uncomment the code block below:
 //
 import TurbolinksAdapter from 'vue-turbolinks'
-import Vue from 'vue/dist/vue.esm'
-// import Vue from 'vue/dist/vue.esm.js';
+// import Vue from 'vue/dist/vue.esm'
+import Vue from 'vue/dist/vue.esm.js';
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import App from '../components/app.vue'
 import Test from '../components/test.vue'
 
 Vue.use(TurbolinksAdapter)
 Vue.use(BootstrapVue)
-// Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin)
 Vue.component('app', App)
 Vue.component('test', Test)
