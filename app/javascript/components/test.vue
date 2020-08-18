@@ -4,8 +4,6 @@
     <div>
       <div class="mt-3">
 
-      	<i class="fa fa-address-book" aria-hidden="true"></i>
-
       	<div class="h2 mb-0">
       	    <b-icon-arrow-up></b-icon-arrow-up>
       	    <b-icon-exclamation-triangle-fill></b-icon-exclamation-triangle-fill>
@@ -31,5 +29,8 @@ export default {
 p {
   font-size: 6em;
   text-align: center;
+}
+#test {
+	color:blue;
 }
 </style>
