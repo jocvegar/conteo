@@ -1,6 +1,23 @@
 <template>
-  <div id="test">
+  <div class="container "id="test">
     <p>{{ mensage }}</p>
+    <div>
+      <div class="mt-3">
+
+      	<i class="fa fa-address-book" aria-hidden="true"></i>
+
+      	<div class="h2 mb-0">
+      	    <b-icon-arrow-up></b-icon-arrow-up>
+      	    <b-icon-exclamation-triangle-fill></b-icon-exclamation-triangle-fill>
+      	  </div>
+
+        <b-button-group>
+          <b-button variant="success">Success</b-button>
+          <b-button variant="info">Info</b-button>
+          <b-button variant="warning">Warning</b-button>
+        </b-button-group>
+      </div>
+    </div>
   </div>
 </template>
 
