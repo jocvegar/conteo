@@ -1,0 +1,52 @@
+<nav id="sidebar">
+    <div class="sidebar-header">
+    	<%= link_to root_path do %>
+	    	<h3 class="text-center">Conteo</h3>
+	    	<strong>SE</strong>
+    	<% end %>
+    </div>
+
+    <ul class="list-unstyled components">
+        <li class="<%= active_class('/packages') %>">
+        	<%= link_to root_path do %>
+        		<i class="fas fa-clipboard mr-2"></i>
+        		Procesos
+        	<% end %>
+        </li>
+
+        <li class="<%= active_class('/finished_packages') %>">
+            <%= link_to "#" do %>
+                <i class="far fa-check-square mr-2"></i>
+                Terminados
+            <% end %>
+        </li>
+
+        <li class="<%= active_class('/teams') %>">
+        	<%= link_to root_path do %>
+        		<i class="fa fa-pencil-ruler mr-2"></i>
+        		Equipos
+        	<% end %>
+            <!-- <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                <i class="fas fa-copy"></i>
+                Pages
+            </a>
+            <ul class="collapse list-unstyled" id="pageSubmenu">
+                <li>
+                    <a href="#">Page 1</a>
+                </li>
+                <li>
+                    <a href="#">Page 2</a>
+                </li>
+                <li>
+                    <a href="#">Page 3</a>
+                </li>
+            </ul> -->
+        </li>
+        <li class="<%= active_class('/users') %>">
+        	<%= link_to root_path do %>
+        		<i class="fas fa-users mr-2"></i>
+        		Usuarios
+        	<% end %>
+        </li>
+    </ul>
+</nav>

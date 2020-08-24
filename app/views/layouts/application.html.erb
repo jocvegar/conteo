@@ -9,21 +9,23 @@
     <%#= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'hello_vue' %>
-    <%= stylesheet_pack_tag 'hello_vue' %>
-
+    <%#= javascript_pack_tag 'hello_vue' %>
+    <%#= stylesheet_pack_tag 'hello_vue' %>
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-
-    <!--Font Awesome-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
-
     <%= favicon_link_tag asset_path('favicon.ico') %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body>
-    <div data-behavior="vue">
-      <%= yield %>
+    <!-- <div data-behavior="vue"> -->
+    <!-- </div> -->
+    <div class="wrapper">
+        <%= render "shared/side_navbar" %>
+        <div id="content">
+            <%= render "shared/top_navbar" %>
+            <%#= flash_messages %>
+            <%= yield %>
+        </div>
     </div>
   </body>
 </html>

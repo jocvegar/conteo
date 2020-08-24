@@ -11,6 +11,8 @@ require("channels")
 import '../stylesheets/application.scss'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import '@fortawesome/fontawesome-free/js/all.min.js'
+import '@fortawesome/fontawesome-free/css/all.min.css'
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
