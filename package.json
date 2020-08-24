@@ -9,6 +9,8 @@
     "@rails/webpacker": "4.3.0",
     "bootstrap": "^4.5.2",
     "bootstrap-vue": "^2.16.0",
+    "stimulus": "^1.1.1",
+    "stimulus_reflex": "^3.3.0-pre2",
     "turbolinks": "^5.2.0",
     "vue": "^2.6.11",
     "vue-loader": "^15.9.3",
