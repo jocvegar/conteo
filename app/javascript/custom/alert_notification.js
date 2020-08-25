@@ -8,8 +8,7 @@ const dismissAlert = () => {
 	}
 }
 
-document.addEventListener("turbolinks:load", function () {
-	dismissAlert();
-});
-
 // export default dismissAlert;
+document.addEventListener('turbolinks:load', () => {
+  dismissAlert();
+})

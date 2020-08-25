@@ -13,26 +13,32 @@
         <li class="<%= active_class('/packages') %>">
         	<%= link_to root_path do %>
         		<i class="fas fa-clipboard mr-2"></i>
-        		Procesos
+        		Ciudades
         	<% end %>
         </li>
 
         <li class="<%= active_class('/finished_packages') %>">
             <%= link_to "#" do %>
                 <i class="far fa-check-square mr-2"></i>
-                Terminados
+                Centros de Votación
             <% end %>
         </li>
 
         <li class="<%= active_class('/teams') %>">
-        	<%= link_to root_path do %>
+        	<%= link_to "#" do %>
         		<i class="fa fa-pencil-ruler mr-2"></i>
         		Equipos
         	<% end %>
-            <!-- <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                <i class="fas fa-copy"></i>
+        </li>
+        <li>
+            <a href="#pageSubmenu"
+                data-toggle="collapse"
+                aria-expanded="false"
+                class="dropdown-toggle">
+                <i class="fas fa-copy mr-2"></i>
                 Pages
             </a>
+
             <ul class="collapse list-unstyled" id="pageSubmenu">
                 <li>
                     <a href="#">Page 1</a>
@@ -43,8 +49,9 @@
                 <li>
                     <a href="#">Page 3</a>
                 </li>
-            </ul> -->
+            </ul>
         </li>
+
         <li class="<%= active_class('/users') %>">
         	<%= link_to root_path do %>
         		<i class="fas fa-users mr-2"></i>
