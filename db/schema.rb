@@ -10,29 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_25_122606) do
+ActiveRecord::Schema.define(version: 2020_08_25_131015) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "administrators", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["email"], name: "index_administrators_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_administrators_on_reset_password_token", unique: true
-  end
 
   create_table "cities", force: :cascade do |t|
     t.string "name"
     t.string "slug"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "zone_id", null: false
     t.index ["slug"], name: "index_cities_on_slug", unique: true
+    t.index ["zone_id"], name: "index_cities_on_zone_id"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -54,8 +44,29 @@ ActiveRecord::Schema.define(version: 2020_08_25_122606) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "role", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "voting_centers", force: :cascade do |t|
+    t.string "name"
+    t.bigint "city_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "slug"
+    t.index ["city_id"], name: "index_voting_centers_on_city_id"
+    t.index ["slug"], name: "index_voting_centers_on_slug", unique: true
+  end
+
+  create_table "zones", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "slug"
+    t.index ["slug"], name: "index_zones_on_slug", unique: true
+  end
+
+  add_foreign_key "cities", "zones"
+  add_foreign_key "voting_centers", "cities"
 end
