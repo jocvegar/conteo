@@ -2,60 +2,45 @@
   <h1 data-target="hello.output"></h1>
 </div>
 
-<div class="row">
-  <div class="col-md-4 mb-4">
-    <div class="callout callout-primary shadow h-85 py-3">
-      <div class="card-body">
-        <div class="row no-gutters align-items-center">
-          <div class="col mr-2">
-            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-              <%#= link_to "Procesos", packages_path %>
-              Ciudad 1
+<div id="home">
+  <div class="row">
+    <% @zones.each do |zone| %>
+      <div class="col-12 col-sm-6 col-lg-3 mb-4">
+        <div class="callout callout-primary shadow h-85 py-3">
+          <div class="card-body">
+            <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                  <%= zone.name %>
+                </div>
+                <div class="h5 mb-0 font-weight-bold text-black-50">
+                  300
+                </div>
+              </div>
+              <div class="col-auto">
+                <i class="fas fa-hashtag fa-lg text-muted"></i>
+              </div>
             </div>
-            <div class="h5 mb-0 font-weight-bold text-black-50"><%#= @package_size %></div>
-          </div>
-          <div class="col-auto">
-            <i class="fas fa-hashtag fa-2x text-muted"></i>
           </div>
         </div>
       </div>
-    </div>
-  </div>
+    <% end %>
 
-  <div class="col-md-4 mb-4">
-    <div class="callout callout-primary shadow h-85 py-3">
-      <div class="card-body">
-        <div class="row no-gutters align-items-center">
-          <div class="col mr-2">
-            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-              <%#= link_to "Terminados", "#" %>
-              Ciudad 2
+    <div class="col-12 col-sm-6 col-lg-3 mb-4">
+      <div class="callout callout-success shadow h-85 py-3">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                Total
+              </div>
+              <div class="h5 mb-0 font-weight-bold text-black-50">
+                200
+              </div>
             </div>
-            <div class="h5 mb-0 font-weight-bold text-black-50">
-              <%#= @finished_package_size %>
+            <div class="col-auto">
+              <i class="fas fa-hashtag fa-lg text-muted"></i>
             </div>
-          </div>
-          <div class="col-auto">
-            <i class="fas fa-hashtag fa-2x text-muted"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-4 mb-4">
-    <div class="callout callout-primary shadow h-85 py-3">
-      <div class="card-body">
-        <div class="row no-gutters align-items-center">
-          <div class="col mr-2">
-            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-              <%#= link_to "Usuarios", users_path %>
-              Ciudad 3
-            </div>
-            <div class="h5 mb-0 font-weight-bold text-black-50"><%#= @user_size %></div>
-          </div>
-          <div class="col-auto">
-            <i class="fas fa-hashtag fa-2x text-muted"></i>
           </div>
         </div>
       </div>
