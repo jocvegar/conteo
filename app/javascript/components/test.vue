@@ -39,12 +39,13 @@
 
 <script>
   export default {
-    props: ['post_route'],
+    props: ['post_route', 'voting_center'],
     data() {
       return {
         form: {
           name: '',
           identity: '',
+          voting_center_id: this.voting_center
         },
         show: true
       }
@@ -64,11 +65,12 @@
         fetch(this.post_route, requestOptions)
         .then(response => {
           if(response.ok) {
-            console.log('There was a response', response.json());
+            this.resetForm()
+          } else {
+            response.text().then(text => {
+              console.log("text " + JSON.parse(text).message)
+            })
           }
-          response.text().then(text => {
-            console.log("text " + JSON.parse(text).message)
-          })
         })
         .catch(error => {
           console.log('There was an error!', error);
@@ -76,7 +78,9 @@
       },
       onReset(evt) {
         evt.preventDefault()
-        // Reset our form values
+        this.resetForm()
+      },
+      resetForm() {
         this.form.name = ''
         this.form.identity = ''
         // Trick to reset/clear native browser form validation state

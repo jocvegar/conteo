@@ -1,4 +1,6 @@
 class ConteoController < ApplicationController
+	before_action :authenticate_user!
+
 	include Response
 	include ExceptionHandler
 
@@ -16,8 +18,8 @@ class ConteoController < ApplicationController
 	private
 
 	def voter_params
-	    params.require(:conteo).permit(:name, :identity)
-	  end
+	    params.require(:conteo).permit(:name, :identity, :voting_center_id)
+	end
 end
 
 
