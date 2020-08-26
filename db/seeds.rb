@@ -11,7 +11,3 @@ Zone.create([{ name: 'Tegucigalpa' },{ name: 'Comayagüela' },{ name: 'Las Casit
 City.create!([{ name: 'Ciudad 1', zone: Zone.first },{ name: 'Ciudad 2', zone: Zone.second },{ name: 'Ciudad 3', zone: Zone.last }])
 
 VotingCenter.create!([{ name: 'Centro de Votación 1', city: City.first },{ name: 'Centro de Votación 2', city: City.second },{ name: 'Centro de Votación 3', city: City.last }])
-
-
-rails g migration AddSlugToVotingCenters slug:uniq
-VotingCenter.find_each(&:save)

@@ -1,36 +1,69 @@
 <template>
-  <div class="container "id="test">
-    <p>{{ mensage }}</p>
-    <div>
-      <div class="mt-3">
+  <div class="mt-5 px-5">
+    <b-form @submit="onSubmit" @reset="onReset" v-if="show">
+      <b-form-group id="input-group-1" label="Nombre" label-for="input-1">
+        <b-form-input
+          id="input-1"
+          v-model="form.name"
+          type="text"
+          required
+          placeholder="Nombre"
+        ></b-form-input>
+      </b-form-group>
 
-      	<div class="h2 mb-0">
-      	    <b-icon-arrow-up></b-icon-arrow-up>
-      	    <b-icon-exclamation-triangle-fill></b-icon-exclamation-triangle-fill>
-      	  </div>
+      <b-form-group id="input-group-2" label="Identidad" label-for="input-2">
+        <b-form-input
+          id="input-2"
+          v-model="form.identity"
+          required
+          type="number"
+          placeholder="Identidad"
+        ></b-form-input>
+      </b-form-group>
 
-        <b-button-group>
-          <b-button variant="success">Success</b-button>
-          <b-button variant="info">Info</b-button>
-          <b-button variant="warning">Warning</b-button>
-        </b-button-group>
-      </div>
-    </div>
+      <b-row>
+        <b-col>
+          <b-button block type="reset" variant="secondary">Cancelar</b-button>
+        </b-col>
+        <b-col>
+          <b-button block type="submit" variant="primary">Enviar</b-button>
+        </b-col>
+      </b-row>
+    </b-form>
+
+    <b-card class="mt-3" header="Form Data Result">
+      <pre class="m-0">{{ form }}</pre>
+    </b-card>
   </div>
 </template>
 
 <script>
-export default {
- props: ["mensage"]
-}
+  export default {
+    data() {
+      return {
+        form: {
+          name: '',
+          identity: '',
+        },
+        show: true
+      }
+    },
+    methods: {
+      onSubmit(evt) {
+        evt.preventDefault()
+        alert(JSON.stringify(this.form))
+      },
+      onReset(evt) {
+        evt.preventDefault()
+        // Reset our form values
+        this.form.name = ''
+        this.form.identity = ''
+        // Trick to reset/clear native browser form validation state
+        this.show = false
+        this.$nextTick(() => {
+          this.show = true
+        })
+      }
+    }
+  }
 </script>
-
-<style scoped>
-p {
-  font-size: 6em;
-  text-align: center;
-}
-#test {
-	color:blue;
-}
-</style>

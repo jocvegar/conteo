@@ -1,0 +1,2 @@
+module ConteoHelper
+end

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>Registro</title>
+		<%= csrf_meta_tags %>
+		<%= csp_meta_tag %>
+		<%#= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+		<%= stylesheet_pack_tag 'application', media: 'all',
+		'data-turbolinks-track': 'reload' %>
+		<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+		<%= javascript_pack_tag 'hello_vue' %>
+		<%= stylesheet_pack_tag 'hello_vue' %>
+		<%= favicon_link_tag asset_path('favicon.ico') %>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+
+	<body>
+		<%= flash_messages %>
+		<div data-behavior="vue">
+			<%= yield %>
+		</div>
+	</body>
+</html>
