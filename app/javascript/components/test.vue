@@ -39,6 +39,7 @@
 
 <script>
   export default {
+    props: ['post_route'],
     data() {
       return {
         form: {
@@ -51,7 +52,27 @@
     methods: {
       onSubmit(evt) {
         evt.preventDefault()
-        alert(JSON.stringify(this.form))
+
+        const requestOptions = {
+          method: 'POST',
+          headers: {
+            "Content-Type": "application/json",
+                  "Accept": "application/json"
+          },
+          body: JSON.stringify(this.form)
+        };
+        fetch(this.post_route, requestOptions)
+        .then(response => {
+          if(response.ok) {
+            console.log('There was a response', response.json());
+          }
+          response.text().then(text => {
+            console.log("text " + JSON.parse(text).message)
+          })
+        })
+        .catch(error => {
+          console.log('There was an error!', error);
+        })
       },
       onReset(evt) {
         evt.preventDefault()

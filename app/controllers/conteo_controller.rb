@@ -1,19 +1,23 @@
 class ConteoController < ApplicationController
+	include Response
+	include ExceptionHandler
+
 	layout "tally"
+	skip_before_action :verify_authenticity_token
 
 	def index
 	end
 
 	def create
-		if @current_user
-			@voter = Voter.new(name: params[:name], identity: params[:identity])
-			@voter.voting_center_id = @current_user.voting_center.id
-
-			status = @voter.save ? 201 : 422
-
-			render json: { errors: @record.errors }, status: status
-		else
-			render json: { errors: { "user": [ "not found" ] } }, status: 422
-		end
+		@voter = Voter.create!(voter_params)
+		json_response(@voter, :created)
 	end
+
+	private
+
+	def voter_params
+	    params.require(:conteo).permit(:name, :identity)
+	  end
 end
+
+
