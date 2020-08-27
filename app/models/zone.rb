@@ -4,4 +4,5 @@ class Zone < ApplicationRecord
 
 	has_many :cities
 	has_many :voting_centers, through: :cities
+	has_many :voters, through: :voting_centers
 end

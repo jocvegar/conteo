@@ -1,0 +1,43 @@
+<div class="row">
+  <% zones.each do |zone| %>
+    <div class="col-12 col-sm-6 col-lg-3 mb-4">
+      <div class="callout callout-primary shadow h-85 py-3">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                <%= zone.name %>
+              </div>
+              <div class="h5 mb-0 font-weight-bold text-black-50">
+                <%= zone.voters.size %>
+              </div>
+            </div>
+            <div class="col-auto">
+              <i class="fas fa-hashtag fa-lg text-muted"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="col-12 col-sm-6 col-lg-3 mb-4">
+    <div class="callout callout-success shadow h-85 py-3">
+      <div class="card-body">
+        <div class="row no-gutters align-items-center">
+          <div class="col mr-2">
+            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+              Total
+            </div>
+            <div class="h5 mb-0 font-weight-bold text-black-50">
+              200
+            </div>
+          </div>
+          <div class="col-auto">
+            <i class="fas fa-hashtag fa-lg text-muted"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
