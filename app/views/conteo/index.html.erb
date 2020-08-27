@@ -1,5 +1,8 @@
+<navbar email="<%= current_user.email %>"></navbar>
+
 <div class="container">
 	<test
 		post_route="<%= conteo_index_path %>"
-		voting_center="<%= current_user.voting_center.id %>"></test>
+		voting_center="<%= current_user.voting_center.id %>">
+	</test>
 </div>

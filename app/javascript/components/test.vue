@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-5 px-5">
+  <div class="mt-5 px-2">
     <b-form @submit="onSubmit" @reset="onReset" v-if="show">
       <b-form-group id="input-group-1" label="Nombre" label-for="input-1">
         <b-form-input

@@ -30,7 +30,7 @@
               Total
             </div>
             <div class="h5 mb-0 font-weight-bold text-black-50">
-              200
+              <%= Zone.all.map(&:voters).flatten.size %>
             </div>
           </div>
           <div class="col-auto">
